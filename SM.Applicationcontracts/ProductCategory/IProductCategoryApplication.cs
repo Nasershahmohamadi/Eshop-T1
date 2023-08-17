@@ -1,4 +1,5 @@
 ﻿using Framework.Application;
+using SM.Domain.ProductCategoryAgg;
 using System.Collections.Generic;
 
 namespace SM.Applicationcontracts.ProductCategory
@@ -8,7 +9,7 @@ namespace SM.Applicationcontracts.ProductCategory
         OperationResult Create(CreateProductCategoryVM command);
         OperationResult Edit(EditProductCategoryVM command);
         OperationResult Delete(long Id);
-        Domain.ProductCategoryAgg.ProductCategory Get(long Id);
-        List<Domain.ProductCategoryAgg.ProductCategory> Get();
+        ProductCategoryVM Get(long Id);
+        List<ProductCategoryVM> Get();
     }
 }

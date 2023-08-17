@@ -62,14 +62,35 @@ namespace SM.Application.ProductCategoryApplication
             }
         }
 
-        public ProductCategory Get(long Id)
+        public ProductCategoryVM Get(long Id)
         {
-          return  _productCategoryRepository.Get(Id);
+            var entity = _productCategoryRepository.Get(Id);
+            return new ProductCategoryVM
+            {
+                CreationDate = entity.CreationDate,
+                Id = entity.Id,
+                IsDeleted = entity.IsDeleted,
+                Picture = entity.Picture,
+                Title = entity.Title
+            };
         }
 
-        public List<ProductCategory> Get()
+        public List<ProductCategoryVM> Get()
         {
-            return _productCategoryRepository.Get();
+            var entities = _productCategoryRepository.Get();
+            var result = new List<ProductCategoryVM>();
+            foreach (var entity in entities)
+            {
+                result.Add(new ProductCategoryVM
+                {
+                    CreationDate = entity.CreationDate,
+                    Id = entity.Id,
+                    IsDeleted = entity.IsDeleted,
+                    Picture = entity.Picture,
+                    Title = entity.Title
+                });
+            }
+            return result;
         }
     }
 }
