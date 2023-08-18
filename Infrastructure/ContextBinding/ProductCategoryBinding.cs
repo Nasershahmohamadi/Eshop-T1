@@ -22,6 +22,9 @@ namespace Infrastructure.ContextBinding
             builder.Property(x => x.CreationDate);
             builder.Property(x => x.IsDeleted);
             builder.Property(x => x.Title);
+            builder.Property(x => x.Description);
+            builder.Property(x => x.MetaDescription);
+            builder.Property(x => x.KeyWords);
         }
     }
 }

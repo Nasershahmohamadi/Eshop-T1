@@ -9,7 +9,7 @@
     <div class="col-sm-12">
         <h4 class="page-title pull-right">@ViewData["title"]</h4>
         <p class="pull-right">
-            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد گروه محصول جدید</a>
+            <a class="btn btn-success btn-lg" href="#showmodal=@Url.Page("./Index", "Create")">ایجاد گروه جدید</a>
         </p>
     </div>
 </div>
@@ -21,10 +21,10 @@
                 <h3 class="panel-title">جستجو در گروه محصولات</h3>
             </div>
             <div class="panel-body">
-                <form class="form-inline" role="form" method="get">
+                <form class="form-inline" role="form" method="post" asp-page-handler="Search">
                     <div class="form-group">
                         <label class="sr-only" asp-for="productcategory.Title"></label>
-                        <input class="form-control" asp-for="productcategory.Title" placeholder="نام گروه محصولی">
+                        <input class="form-control" asp-for="productcategory.Title" placeholder="نام گروه محصول">
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>

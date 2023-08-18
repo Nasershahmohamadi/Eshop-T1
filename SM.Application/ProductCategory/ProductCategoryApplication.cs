@@ -14,13 +14,12 @@ namespace SM.Application.ProductCategoryApplication
         {
             _productCategoryRepository = productCategoryRepository;
         }
-
         public OperationResult Create(CreateProductCategoryVM command)
         {
             var _operation = new OperationResult();
             try
             {
-                var entity = new ProductCategory(command.Title, command.PictureTitle, command.Title, command.PictureAlt, command.Slug);
+                var entity = new ProductCategory(command.Title, command.PictureTitle, command.Title, command.PictureAlt, command.Slug,command.Description,command.MetaDescription,command.KeyWords);
                 _productCategoryRepository.Create(entity);
                 return _operation.Success();
             }
@@ -30,7 +29,6 @@ namespace SM.Application.ProductCategoryApplication
                 return _operation.Failed();
             }
         }
-
         public OperationResult Delete(long Id)
         {
             var _operation = new OperationResult();
@@ -45,13 +43,12 @@ namespace SM.Application.ProductCategoryApplication
                 return _operation.Failed();
             }
         }
-
         public OperationResult Edit(EditProductCategoryVM command)
         {
             var _operation = new OperationResult();
             try
             {
-                var entity = new ProductCategory(command.Title, command.Picture, command.Title, command.PictureAlt, command.Slug);
+                var entity = new ProductCategory(command.Title, command.Picture, command.Title, command.PictureAlt, command.Slug,command.Description,command.MetaDescription,command.KeyWords);
                 _productCategoryRepository.Edit(command.Id, entity);
                 return _operation.Success();
             }
@@ -61,7 +58,6 @@ namespace SM.Application.ProductCategoryApplication
                 return _operation.Failed();
             }
         }
-
         public ProductCategoryVM Get(long Id)
         {
             var entity = _productCategoryRepository.Get(Id);
@@ -74,7 +70,6 @@ namespace SM.Application.ProductCategoryApplication
                 Title = entity.Title
             };
         }
-
         public List<ProductCategoryVM> Get()
         {
             var entities = _productCategoryRepository.Get();
@@ -91,6 +86,15 @@ namespace SM.Application.ProductCategoryApplication
                 });
             }
             return result;
+        }
+
+        public List<SearchProductCategoryVM> Search(SearchProductCategoryVM command)
+        {
+          var list=  _productCategoryRepository.Search(command.Title);
+            foreach (var item in list)
+            {
+
+            }
         }
     }
 }

@@ -5,21 +5,26 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShopManagement", "ShopManagement", "{F7ABA78D-424B-4B09-8F9F-50448EC6C095}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Domain", "SM.Domain\SM.Domain.csproj", "{50CFA20A-E985-4400-86EC-34B15B36EC8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Domain", "SM.Domain\SM.Domain.csproj", "{50CFA20A-E985-4400-86EC-34B15B36EC8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Application", "SM.Application\SM.Application.csproj", "{A51FA9B6-E25D-4815-81C1-C97750675359}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Application", "SM.Application\SM.Application.csproj", "{A51FA9B6-E25D-4815-81C1-C97750675359}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SM.Applicationcontracts", "SM.Applicationcontracts\SM.Applicationcontracts.csproj", "{233FB4B4-D7EA-41A7-AED5-15646C2643BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SM.Applicationcontracts", "SM.Applicationcontracts\SM.Applicationcontracts.csproj", "{233FB4B4-D7EA-41A7-AED5-15646C2643BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8C1997DA-D7E3-42D1-A1B1-51D7EE107693}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{93CAB81D-1A43-4BEE-BD1C-B41A175DF2F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{93CAB81D-1A43-4BEE-BD1C-B41A175DF2F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Framework", "0-Framework", "{7477DD84-B260-4BB9-B9B0-223D911D747F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{E98289A3-0F9F-448D-B2C5-679290C73D7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "Framework\Framework.csproj", "{E98289A3-0F9F-448D-B2C5-679290C73D7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{B4D9E154-1550-4D37-A963-D8C6B992805A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{B4D9E154-1550-4D37-A963-D8C6B992805A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{265772C6-0ED3-4B14-B0E3-54EFFB79E1D2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

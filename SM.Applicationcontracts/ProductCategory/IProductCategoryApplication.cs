@@ -11,5 +11,6 @@ namespace SM.Applicationcontracts.ProductCategory
         OperationResult Delete(long Id);
         ProductCategoryVM Get(long Id);
         List<ProductCategoryVM> Get();
+        List<SearchProductCategoryVM> Search(SearchProductCategoryVM command);
     }
 }

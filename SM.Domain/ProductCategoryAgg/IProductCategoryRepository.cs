@@ -11,6 +11,7 @@ namespace SM.Domain.ProductCategoryAgg
     {
         bool Edit(long Id, ProductCategory command);
         bool Delete(long Id);
+        List<ProductCategory> Search(string command);
         void SaveChanges();
     }
 }

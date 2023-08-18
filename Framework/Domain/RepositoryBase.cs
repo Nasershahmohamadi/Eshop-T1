@@ -18,7 +18,8 @@ namespace Framework.Domain
         {
             try
             {
-            _contex.Set<T>().Add(command);
+                _contex.Set<T>().Add(command);
+                _contex.SaveChanges();
                 return true;
 
             }
