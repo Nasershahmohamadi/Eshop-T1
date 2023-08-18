@@ -21,5 +21,14 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategory
         {
             ViewData["list"] = _productCategoryApplication.Get();
         }
+
+        public IActionResult OnGetCreate()
+        {
+            return Partial("Create");
+        }
+        public IActionResult OnPostCreate()
+        {
+            return Partial("Create");
+        }
     }
 }

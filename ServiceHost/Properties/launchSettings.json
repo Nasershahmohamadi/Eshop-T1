@@ -11,15 +11,21 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "launchUrl": "Administration/Shop/ProductCategory",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+
     },
     "ServiceHost": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "launchUrl": "Administration/Shop/ProductCategory",
+
+      //"launchUrl": "administration/shop/productcategory",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
