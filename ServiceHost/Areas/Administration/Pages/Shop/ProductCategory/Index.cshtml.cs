@@ -23,7 +23,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategory
         public void OnGet(SearchProductCategoryVM model)
         {
             productCategories = _productCategoryApplication.Search(model)
-                .Where(x=>x.IsDeleted!=true).ToList();
+                .Where(x => x.IsDeleted != true).ToList();
         }
         public IActionResult OnGetCreate()
         {
@@ -34,17 +34,14 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategory
             var result = _productCategoryApplication.Create(model);
             return RedirectToPage();
         }
-        public IActionResult OnPostSearch(string Title)
+        public IActionResult OnPostSearch(string id)
         {
-            ViewData["list"] = _productCategoryApplication.Get().Where(x => x.Title == Title);
-            return RedirectToPage("Index", ViewData["list"]);
+            var model = new SearchProductCategoryVM {Title = id};
+            return RedirectToPage("Index", model);
         }
         public IActionResult OnGetEdit(long id)
         {
-            var productCategory = _productCategoryApplication.Search(new SearchProductCategoryVM
-            {
-                Id = id
-            }).Select(x => new EditProductCategoryVM
+            var productCategory = _productCategoryApplication.Search(new SearchProductCategoryVM { Id=id }).Select(x => new EditProductCategoryVM
             {
                 CreationDate = x.CreationDate,
                 Description = x.Description,
