@@ -452,6 +452,13 @@
         </div>
         <!-- Left Sidebar End -->
     </div>
+    <div id="MainModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content" id="ModalContent">
+                @*Modal Content here*@
+            </div>
+        </div>
+    </div>
     <!-- END wrapper -->
     <!-- <script> -->
     <!-- var resizefunc = []; -->
@@ -500,12 +507,16 @@
 
     <!-- Todo -->
     <script src="/AdminTheme/assets/js/jquery.todo.js"></script>
-    <script src="/AdminTheme/assets/js/site.js"></script>
-    
 
-<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-<script src="/lib/jquery-validation/dist/jquery.validate.js"></script>
+ 
+    <script src="/AdminTheme/assets/js/site.js"></script>
+
+
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+
+
 
     <!-- <script type="text/javascript"> -->
     <!-- /* ============================================== -->
@@ -518,16 +529,10 @@
     <!-- }); -->
     <!-- }); -->
     <!-- </script> -->
-    @RenderSection("Scripts",false);
+    @RenderSection("Scripts", false);
 
 
-    <div id="MainModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content" id="ModalContent">
-                @*Modal Content here*@
-            </div>
-        </div>
-    </div>
+
 
 </body>
 

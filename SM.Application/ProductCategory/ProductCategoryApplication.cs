@@ -19,7 +19,7 @@ namespace SM.Application.ProductCategoryApplication
             var _operation = new OperationResult();
             try
             {
-                var entity = new ProductCategory(command.Title, command.PictureTitle, command.Title, command.PictureAlt, command.Slug,command.Description,command.MetaDescription,command.KeyWords);
+                var entity = new ProductCategory(command.Title, command.PictureTitle, command.Title, command.PictureAlt, command.Slug, command.Description, command.MetaDescription, command.KeyWords);
                 _productCategoryRepository.Create(entity);
                 return _operation.Success();
             }
@@ -48,7 +48,8 @@ namespace SM.Application.ProductCategoryApplication
             var _operation = new OperationResult();
             try
             {
-                var entity = new ProductCategory(command.Title, command.Picture, command.Title, command.PictureAlt, command.Slug,command.Description,command.MetaDescription,command.KeyWords);
+                var entity = _productCategoryRepository.Get(command.Id);
+                entity.Edit(command.Title,command.Picture,command.PictureTitle,command.PictureAlt,command.Slug,command.Description,command.MetaDescription,command.KeyWords);
                 _productCategoryRepository.Edit(command.Id, entity);
                 return _operation.Success();
             }
@@ -88,12 +89,33 @@ namespace SM.Application.ProductCategoryApplication
             return result;
         }
 
-        public List<SearchProductCategoryVM> Search(SearchProductCategoryVM command)
+        public List<ProductCategoryVM> Search(SearchProductCategoryVM command)
         {
-          var list=  _productCategoryRepository.Search(command.Title);
-            foreach (var item in list)
+            try
+            {
+            var _list = _productCategoryRepository.Search(command.Title , command.Id);
+            var _result = new List<ProductCategoryVM>();
+            foreach (var item in _list)
+            {
+                _result.Add(new ProductCategoryVM
+                {
+                    CreationDate=item.CreationDate,
+                    Description=item.Description,
+                    Id=item.Id,
+                    IsDeleted=item.IsDeleted,
+                    Keywords=item.KeyWords,
+                    MetaDescription=item.MetaDescription,
+                    Picture=item.Picture,
+                    Title = item.Title
+                });
+            }
+            return _result;
+
+            }
+            catch (Exception)
             {
 
+                throw;
             }
         }
     }

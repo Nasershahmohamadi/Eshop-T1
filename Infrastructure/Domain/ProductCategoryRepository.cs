@@ -37,7 +37,7 @@ namespace Infrastructure.Domain
             try
             {
                 var entity = Get(command.Id);
-                entity.Edit(command.Title, command.Picture, command.Title,command.PictureAlt, command.Slug , command.Description,command.MetaDescription,command.KeyWords);
+                entity.Edit(command.Title, command.Picture, command.Title, command.PictureAlt, command.Slug, command.Description, command.MetaDescription, command.KeyWords);
                 SaveChanges();
                 return true;
 
@@ -52,13 +52,16 @@ namespace Infrastructure.Domain
         {
             _context.SaveChanges();
         }
-
-        public List<ProductCategory> Search(string command)
+        public List<ProductCategory> Search(string command, long Id)
         {
-            var query = _context.ProductCategories.Select(x=>x);
+            var query = _context.ProductCategories.Select(x => x);
             if (!string.IsNullOrWhiteSpace(command))
             {
-               query= query.Where(x => x.Title.Contains(command));
+                query = query.Where(x => x.Title.Contains(command));
+            }
+            if (Id != 0 )
+            {
+                query = query.Where(x=>x.Id==Id);
             }
             return query.ToList();
         }

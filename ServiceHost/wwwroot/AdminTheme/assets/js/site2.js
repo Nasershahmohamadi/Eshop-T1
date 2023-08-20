@@ -1,21 +1,31 @@
-﻿var SinglePage = {};
+﻿const { cache } = require("npm");
+
+var SinglePage = {};
 
 SinglePage.LoadModal = function () {
+    alert(1)
     var url = window.location.hash.toLowerCase();
     if (!url.startsWith("#showmodal")) {
         return;
     }
     url = url.split("showmodal=")[1];
+    console.log("SinglePage.LoadModal => " + url)
     $.get(url,
         null,
         function (htmlPage) {
-            $("#ModalContent").html(htmlPage);
-            const container = document.getElementById("ModalContent");
-            const forms = container.getElementsByTagName("form");
-            const newForm = forms[forms.length - 1];
-            //$.validator.unobtrusive.parse(newForm);
-            showModal();
-        }).fail(function (error) {
+            try {
+                $("#ModalContent").html(htmlPage);
+                //const container = document.getElementById("ModalContent");
+                //const forms = container.getElementsByTagName("form");
+                //const newForm = forms[forms.length - 1];
+                //$.validator.unobtrusive.parse(newForm);
+                showModal();
+
+            } catch (exp) {
+                console.log(exp);
+            }
+        })
+        .fail(function (error) {
             alert("خطایی رخ داده، لطفا با مدیر سیستم تماس بگیرید.");
         });
 };
@@ -30,6 +40,7 @@ function hideModal() {
 
 $(document).ready(function () {
     window.onhashchange = function () {
+        alert(2)
         SinglePage.LoadModal();
     };
     $("#MainModal").on("shown.bs.modal",

@@ -1,8 +1,7 @@
 ﻿@page
-@using SM.Applicationcontracts.ProductCategory
 @model ServiceHost.Areas.Administration.Pages.Shop.ProductCategory.IndexModel
 @{
-    var list = ViewData["list"] as List<ProductCategoryVM>;
+    //var list = ViewData["list"] as List<ProductCategoryVM>;
 }
 
 <div class="row">
@@ -54,19 +53,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in list)
+                                @foreach (var item in Model.productCategories)
                                 {
                                     <tr>
                                         <td>@item.Id</td>
                                         <td>
-                                            <img src="~/ProductPictures/@item.Picture" style="width: 70px; height: 70px" />
+                                            <img src="@item.Picture" style="width: 70px; height: 70px" />
                                         </td>
                                         <td>@item.Title</td>
                                         <td>@item.CreationDate</td>
                                         <td>
-                                            <a class="btn btn-warning pull-right m-rl-5" 
-                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                            <a class="btn btn-warning pull-right m-rl-5"
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id })">
                                                 <i class="fa fa-edit"></i> ویرایش
+                                            </a>
+
+                                            <a class="btn btn-danger pull-right m-rl-5"
+                                               asp-page-handler="Delete" asp-route-Id="@item.Id">
+                                                <i class="fa fa-edit"></i> حذف
                                             </a>
                                         </td>
                                     </tr>

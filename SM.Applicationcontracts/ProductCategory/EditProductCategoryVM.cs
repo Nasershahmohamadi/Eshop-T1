@@ -2,7 +2,7 @@
 {
     public class EditProductCategoryVM : CreateProductCategoryVM
     {
-        public long Id { get; private set; }
+        public long Id { get; set; }
 
     }
 }
