@@ -1,4 +1,5 @@
 ﻿using Framework.Domain;
+using SM.Domain.ProductAgg;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace SM.Domain.ProductCategoryAgg
         public string Description { get; private set; }
         public string MetaDescription { get; private set; }
         public string KeyWords { get; private set; }
+        public List<Product> Products { get; set; }
 
         public ProductCategory(string title, string picture, string pictureTitle, string pictureAlt, 
             string slug, string description, string metaDescription, string keyWords)

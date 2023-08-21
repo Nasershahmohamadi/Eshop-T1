@@ -13,6 +13,7 @@
         public string Keywords { get; set; }
         public string MetaDescription { get; set; }
         public long CategoryId { get; set; }
+        public long CreationDate { get; set; }
 
     }
 
