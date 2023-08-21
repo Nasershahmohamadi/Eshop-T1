@@ -22,5 +22,10 @@ namespace Framework.Domain
         {
             IsDeleted = true;
         }
+
+        public void Restore()
+        {
+            IsDeleted = false;
+        }
     }
 }

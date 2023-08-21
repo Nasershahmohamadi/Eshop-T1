@@ -1,5 +1,6 @@
 ﻿using Infrastructure.ContextBinding;
 using Microsoft.EntityFrameworkCore;
+using SM.Domain.ProductAgg;
 using SM.Domain.ProductCategoryAgg;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace Infrastructure.Context
     public class eShopContext : DbContext
     {
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Product> Products { get; set; }
         public eShopContext(DbContextOptions options) : base(options)
         {
 

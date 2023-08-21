@@ -3,7 +3,7 @@
 @{
     //var list = ViewData["list"] as List<ProductCategoryVM>;
 
-    var searchModel = new SM.Applicationcontracts.ProductCategory.SearchProductCategoryVM();
+    @*var searchModel = new SM.Applicationcontracts.ProductCategory.SearchProductCategoryVM();*@
 }
 
 <div class="row">
@@ -24,11 +24,12 @@
             <div class="panel-body">
                 <form class="form-inline" role="form" method="post" asp-page-handler="Search">
                     <div class="form-group">
-                        <label class="sr-only" asp-for="@searchModel.Title"></label>
-                        <input class="form-control" asp-for="@searchModel.Title" placeholder="نام گروه محصول">
+                        @*<label hidden="hidden" asp-for="@Model.searchModel.Id"></label>*@
+                        <label class="sr-only" asp-for="@Model.searchModel.Title"></label>
+                        <input name="Title" class="form-control" asp-for="@Model.searchModel.Title" placeholder="نام گروه محصول">
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
-                    <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index" asp-route-id="@searchModel.Title">مشاهده همه</a>
+                    <a asp-page-handler=""  class="btn btn-primary waves-effect waves-light m-l-10">مشاهده همه</a>
                 </form>
             </div>
         </div>

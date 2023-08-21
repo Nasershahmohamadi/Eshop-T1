@@ -15,6 +15,7 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategory
         private readonly IProductCategoryApplication _productCategoryApplication;
         public SearchProductCategoryVM productcategory { get; set; }
         public List<ProductCategoryVM> productCategories { get; set; }
+        public SearchProductCategoryVM searchModel { get; set; }
         public IndexModel(IProductCategoryApplication productCategoryApplication)
         {
             _productCategoryApplication = productCategoryApplication;
@@ -34,10 +35,10 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.ProductCategory
             var result = _productCategoryApplication.Create(model);
             return RedirectToPage();
         }
-        public IActionResult OnPostSearch(string id)
+        public IActionResult OnPostSearch(string Title)
         {
-            var model = new SearchProductCategoryVM {Title = id};
-            return RedirectToPage("Index", model);
+            var _model = new SearchProductCategoryVM { Title = Title };
+            return RedirectToPage("Index" , _model);
         }
         public IActionResult OnGetEdit(long id)
         {
