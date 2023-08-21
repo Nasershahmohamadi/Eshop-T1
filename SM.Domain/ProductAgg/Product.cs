@@ -2,6 +2,7 @@
 using SM.Domain.ProductCategoryAgg;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace SM.Domain.ProductAgg
 
         public string Name { get; private set; }
         public string Code { get; private set; }
+
+        [Display(Name ="توضیحات مختصر")]
         public string ShortDescription { get; private set; }
         public string Description { get; private set; }
         public string Picture { get; private set; }

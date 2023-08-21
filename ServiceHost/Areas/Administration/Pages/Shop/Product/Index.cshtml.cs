@@ -22,5 +22,16 @@ namespace ServiceHost.Areas.Administration.Pages.Shop.Product
         {
             products = _productApplication.Get();
         }
+
+        public IActionResult OnGetCreate()
+        {
+            return Partial("Create");
+        }
+
+        public IActionResult OnPostCreate(CreateProductVm model)
+        {
+            _productApplication.Create(model);
+            return RedirectToPage("Index");
+        }
     }
 }
