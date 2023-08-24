@@ -88,7 +88,6 @@ namespace SM.Application.ProductCategoryApplication
             }
             return result;
         }
-
         public List<ProductCategoryVM> Search(SearchProductCategoryVM command)
         {
             try

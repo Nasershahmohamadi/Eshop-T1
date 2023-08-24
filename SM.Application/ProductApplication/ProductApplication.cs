@@ -1,4 +1,5 @@
 ﻿using SM.Applicationcontracts.Product;
+using SM.Applicationcontracts.ProductCategory;
 using SM.Domain.ProductAgg;
 using System;
 using System.Collections.Generic;
@@ -91,7 +92,7 @@ namespace SM.Application.ProductApplication
 
         public List<EditProductVM> Get()
         {
-            var _entity = _productRepository.Get();
+            var _entity = _productRepository.Get(x=>x.IsDeleted!=true);
             var result = new List<EditProductVM>();
             foreach (var item in _entity)
             {
@@ -116,7 +117,7 @@ namespace SM.Application.ProductApplication
 
         }
 
-        public List<EditProductVM> Search(string search = "")
+              public List<EditProductVM> Search(string search = "")
         {
             return null;
         }

@@ -12,5 +12,6 @@ namespace SM.Applicationcontracts.ProductCategory
         ProductCategoryVM Get(long Id);
         List<ProductCategoryVM> Get();
         List<ProductCategoryVM> Search(SearchProductCategoryVM command);
+
     }
 }

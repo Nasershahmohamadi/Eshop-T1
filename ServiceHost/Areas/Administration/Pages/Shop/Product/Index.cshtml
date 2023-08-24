@@ -1,6 +1,11 @@
 ﻿@page
 @model ServiceHost.Areas.Administration.Pages.Shop.Product.IndexModel
 @{
+    var items = Model.categories.Select(x=>new SelectListItem
+    {
+    Text=x.Title,
+    Value=x.Id.ToString()
+    }).ToList();
 }
 
 
@@ -28,6 +33,11 @@
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a asp-page-handler=""  class="btn btn-primary waves-effect waves-light m-l-10">مشاهده همه</a>
                 </form>
+            </div>
+            <div>
+                <select asp-items="items">
+                    <option selected="selected">گروه محصول را انتخاب کنید</option>
+                </select>
             </div>
         </div>
     </div>

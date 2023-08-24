@@ -16,8 +16,5 @@ namespace SM.Applicationcontracts.ProductCategory
         public string Description { get; set; }
         public string MetaDescription { get; set; }
         public string KeyWords { get; set; }
-
-
-
     }
 }
