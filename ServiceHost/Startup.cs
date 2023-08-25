@@ -25,6 +25,7 @@ namespace ServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
             ServiceMapper.map(services, Configuration.GetConnectionString("eShop"));
+            ServiceMapper2.map(services, Configuration.GetConnectionString("eShop"));
             services.AddRazorPages();
         }
 

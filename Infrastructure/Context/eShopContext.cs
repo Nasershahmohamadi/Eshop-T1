@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SM.Domain.ProductAgg;
 using SM.Domain.ProductCategoryAgg;
+using SM.Domain.SlideAgg;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Infrastructure.Context
     {
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Slide> Slides { get; set; }
         public eShopContext(DbContextOptions options) : base(options)
         {
 

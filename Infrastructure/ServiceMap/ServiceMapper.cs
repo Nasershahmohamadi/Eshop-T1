@@ -7,11 +7,6 @@ using SM.Applicationcontracts.Product;
 using SM.Applicationcontracts.ProductCategory;
 using SM.Domain.ProductAgg;
 using SM.Domain.ProductCategoryAgg;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Context.ServiceMap
 {
@@ -24,6 +19,7 @@ namespace Infrastructure.Context.ServiceMap
 
             services.AddTransient<IProductApplication, ProductApplication>();
             services.AddTransient<IproductRepository, productRepository>();
+
 
 
             services.AddDbContext<eShopContext>(options =>
