@@ -1,4 +1,5 @@
-﻿using eShopQuery.Contracts.Slide;
+﻿using eShopQuery.Contracts.Category;
+using eShopQuery.Contracts.Slide;
 using eShopQuery.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,7 @@ namespace Infrastructure.Context.ServiceMap
         {
 
             services.AddTransient<ISlideQuery, SlideQuery>();
+            services.AddTransient<ICategoryQuery, CategoryQuery>();
 
 
             services.AddDbContext<eShopContext>(options =>
