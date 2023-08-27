@@ -1,4 +1,6 @@
-﻿namespace SM.Applicationcontracts.Slide
+﻿using System;
+
+namespace SM.Applicationcontracts.Slide
 {
     public class CreateSlideVM
     {
@@ -10,6 +12,7 @@
         public string Text { get; set; }
         public string BtnText { get; set; }
         public string Link { get; set; }
+        public DateTime CreationDate{ get; set; }
 
     }
 }
