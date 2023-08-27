@@ -2,7 +2,7 @@
 
 namespace DM.ApplicationContract.CollageContracts
 {
-    public class EditColleageDiscount
+    public class EditColleageDiscountVM
     {
         public long Id { get; set; }
         public int DiscountRate { get; set; }

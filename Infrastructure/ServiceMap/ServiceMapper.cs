@@ -1,4 +1,7 @@
-﻿using Infrastructure.Domain;
+﻿using DM.Application.ColleageApplication;
+using DM.ApplicationContract.CollageContracts;
+using DM.Domain.ColleageAgg;
+using Infrastructure.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SM.Application.ProductApplication;
@@ -25,6 +28,9 @@ namespace Infrastructure.Context.ServiceMap
 
             services.AddTransient<ISlideRepository, SlideRepository>();
             services.AddTransient<ISlideApplication, SlideApplication>();
+
+            services.AddTransient<IColleageDiscountApplication, ColleageDiscountApplication>();
+            services.AddTransient<IColleageDiscountRepository, ColleageDiscountRepository>();
 
 
 

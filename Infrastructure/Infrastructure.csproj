@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DM.ApplicationContract\DM.ApplicationContract.csproj" />
+    <ProjectReference Include="..\DM.Application\DM.Application.csproj" />
     <ProjectReference Include="..\DM.Domain\DM.Domain.csproj" />
     <ProjectReference Include="..\SM.Applicationcontracts\SM.Applicationcontracts.csproj" />
     <ProjectReference Include="..\SM.Application\SM.Application.csproj" />

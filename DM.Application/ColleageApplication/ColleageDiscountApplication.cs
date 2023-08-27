@@ -52,7 +52,7 @@ namespace DM.Application.ColleageApplication
             }
         }
 
-        public OperationResult Edit(EditColleageDiscount command)
+        public OperationResult Edit(EditColleageDiscountVM command)
         {
             var _operation = new OperationResult();
             try
@@ -74,10 +74,10 @@ namespace DM.Application.ColleageApplication
             }
         }
 
-        public EditColleageDiscount Get(long id)
+        public EditColleageDiscountVM Get(long id)
         {
             var item = _colleageRepository.Get(id);
-            return new EditColleageDiscount
+            return new EditColleageDiscountVM
             {
                 CreationDate = item.CreationDate,
                 Description = item.Description,
@@ -89,13 +89,13 @@ namespace DM.Application.ColleageApplication
             };
         }
 
-        public List<EditColleageDiscount> Get()
+        public List<EditColleageDiscountVM> Get()
         {
             var list = _colleageRepository.Get();
-            var result = new List<EditColleageDiscount>();
+            var result = new List<EditColleageDiscountVM>();
             foreach (var item in list)
             {
-                result.Add(new EditColleageDiscount
+                result.Add(new EditColleageDiscountVM
                 {
                     CreationDate = item.CreationDate,
                     Description = item.Description,
