@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Customer\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\DM.Domain\DM.Domain.csproj" />
     <ProjectReference Include="..\Framework\Framework.csproj" />
   </ItemGroup>
 
