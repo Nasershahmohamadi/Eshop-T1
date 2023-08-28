@@ -1,4 +1,5 @@
 ﻿using DM.Domain.ColleageAgg;
+using DM.Domain.CustomerAgg;
 using Infrastructure.ContextBinding;
 using Microsoft.EntityFrameworkCore;
 using SM.Domain.ProductAgg;
@@ -17,8 +18,10 @@ namespace Infrastructure.Context
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Slide> Slides { get; set; }
+        public DbSet<CustomerDiscount> CustomerDiscounts { get; set; }
 
         public DbSet<ColleageDiscount> ColleageDiscounts { get; set; }
+
         public eShopContext(DbContextOptions options) : base(options)
         {
 
