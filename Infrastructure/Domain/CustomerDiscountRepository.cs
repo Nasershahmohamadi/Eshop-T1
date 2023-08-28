@@ -1,4 +1,5 @@
 ﻿using DM.Domain.CustomerAgg;
+using Framework.Domain;
 using Infrastructure.Context;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Domain
 {
-    public class CustomerDiscountRepository : ICustomerDiscountRepository
+    public class CustomerDiscountRepository : RepositoryBase<long,CustomerDiscount>, ICustomerDiscountRepository
     {
         private readonly eShopContext _eShopContext;
 
-        public CustomerDiscountRepository(eShopContext eShopContext)
+        public CustomerDiscountRepository(eShopContext eShopContext) : base(eShopContext)
         {
             _eShopContext = eShopContext;
         }
@@ -36,22 +37,22 @@ namespace Infrastructure.Domain
             }
         }
 
-        public bool Create(CustomerDiscount command)
-        {
-            try
-            {
-                var entity = new CustomerDiscount(command.DiscountRate, command.Reason, command.StartDate, command.EndDate, 
-                    command.Description);
-                var result = _eShopContext.CustomerDiscounts.Add(entity);
-                SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
+        //public bool Create(CustomerDiscount command)
+        //{
+        //    try
+        //    {
+        //        var entity = new CustomerDiscount(command.DiscountRate, command.Reason, command.StartDate, command.EndDate, 
+        //            command.Description);
+        //        var result = _eShopContext.CustomerDiscounts.Add(entity);
+        //        SaveChanges();
+        //        return true;
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return false;
-            }
-        }
+        //        return false;
+        //    }
+        //}
 
         public bool Delete(long id)
         {
@@ -98,19 +99,19 @@ namespace Infrastructure.Domain
             }
         }
 
-        public CustomerDiscount Get(long key)
-        {
-            return _eShopContext.CustomerDiscounts.Find(key);
-        }
+        //public CustomerDiscount Get(long key)
+        //{
+        //    return _eShopContext.CustomerDiscounts.Find(key);
+        //}
 
-        public List<CustomerDiscount> Get()
-        {
-            return _eShopContext.CustomerDiscounts.ToList();
-        }
+        //public List<CustomerDiscount> Get()
+        //{
+        //    return _eShopContext.CustomerDiscounts.ToList();
+        //}
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _eShopContext.SaveChanges();
         }
     }
 }

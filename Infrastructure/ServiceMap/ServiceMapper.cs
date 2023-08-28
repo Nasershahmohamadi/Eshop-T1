@@ -1,6 +1,9 @@
 ﻿using DM.Application.ColleageApplication;
+using DM.Application.CustomerApplication;
 using DM.ApplicationContract.CollageContracts;
+using DM.ApplicationContract.CustomerContracts;
 using DM.Domain.ColleageAgg;
+using DM.Domain.CustomerAgg;
 using Infrastructure.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +35,8 @@ namespace Infrastructure.Context.ServiceMap
             services.AddTransient<IColleageDiscountApplication, ColleageDiscountApplication>();
             services.AddTransient<IColleageDiscountRepository, ColleageDiscountRepository>();
 
+            services.AddTransient<ICustomerDiscountRepository, CustomerDiscountRepository>();
+            services.AddTransient<ICustomerDiscountApplication, CustomeDiscountApplication>();
 
 
             services.AddDbContext<eShopContext>(options =>

@@ -32,11 +32,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopQuery", "eShopQuery\eS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DiscountManagement", "DiscountManagement", "{EC0659ED-92F6-4F3B-AA51-5D24438A91CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Domain", "DM.Domain\DM.Domain.csproj", "{A559045A-151F-40E8-AE7B-86030AB5D7F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Domain", "DM.Domain\DM.Domain.csproj", "{A559045A-151F-40E8-AE7B-86030AB5D7F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.ApplicationContract", "DM.ApplicationContract\DM.ApplicationContract.csproj", "{FDC74C23-BA9D-44A1-808D-C0C0D916E39C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.ApplicationContract", "DM.ApplicationContract\DM.ApplicationContract.csproj", "{FDC74C23-BA9D-44A1-808D-C0C0D916E39C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DM.Application", "DM.Application\DM.Application.csproj", "{C1CA457C-CFE6-4667-B44C-99AEC006CD31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DM.Application", "DM.Application\DM.Application.csproj", "{C1CA457C-CFE6-4667-B44C-99AEC006CD31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
