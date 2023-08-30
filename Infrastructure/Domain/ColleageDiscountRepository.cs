@@ -1,4 +1,5 @@
 ﻿using DM.Domain.ColleageAgg;
+using Framework.Domain;
 using Infrastructure.Context;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Domain
 {
-    public class ColleageDiscountRepository : IColleageDiscountRepository
+    public class ColleageDiscountRepository : RepositoryBase<long, ColleageDiscount>, IColleageDiscountRepository
     {
         private readonly eShopContext _eShopContext;
 
-        public ColleageDiscountRepository(eShopContext eShopContext)
+        public ColleageDiscountRepository(eShopContext eShopContext) : base(eShopContext)
         {
             _eShopContext = eShopContext;
         }
@@ -31,21 +32,6 @@ namespace Infrastructure.Domain
                 return false;
             }
         }
-
-        public bool Create(ColleageDiscount command)
-        {
-            try
-            {
-                _eShopContext.ColleageDiscounts.Add(command);
-                SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
         public bool Delete(long id)
         {
             try
@@ -59,7 +45,6 @@ namespace Infrastructure.Domain
                 return false;
             }
         }
-
         public bool DisActive(long id)
         {
             try
@@ -73,7 +58,6 @@ namespace Infrastructure.Domain
                 return false;
             }
         }
-
         public bool Edit(ColleageDiscount command)
         {
             try
@@ -89,17 +73,6 @@ namespace Infrastructure.Domain
                 return false;
             }
         }
-
-        public ColleageDiscount Get(long key)
-        {
-            return _eShopContext.ColleageDiscounts.Find(key);
-        }
-
-        public List<ColleageDiscount> Get()
-        {
-            return _eShopContext.ColleageDiscounts.ToList();
-        }
-
         public void SaveChanges()
         {
             _eShopContext.SaveChanges();

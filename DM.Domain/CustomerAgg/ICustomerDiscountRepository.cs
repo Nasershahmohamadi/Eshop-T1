@@ -11,9 +11,7 @@ namespace DM.Domain.CustomerAgg
     {
         bool Edit(CustomerDiscount command);
         bool Delete(long id);
-        bool Active(long id);
-        bool DisActive(long id);
-        void SaveChanges();
+        void saveChanges();
 
     }
 }

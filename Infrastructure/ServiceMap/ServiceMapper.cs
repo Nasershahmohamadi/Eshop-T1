@@ -35,8 +35,10 @@ namespace Infrastructure.Context.ServiceMap
             services.AddTransient<IColleageDiscountApplication, ColleageDiscountApplication>();
             services.AddTransient<IColleageDiscountRepository, ColleageDiscountRepository>();
 
+            services.AddTransient<ICustomerDiscountApplication, CustomerDiscountApplication>();
             services.AddTransient<ICustomerDiscountRepository, CustomerDiscountRepository>();
-            services.AddTransient<ICustomerDiscountApplication, CustomeDiscountApplication>();
+
+
 
 
             services.AddDbContext<eShopContext>(options =>

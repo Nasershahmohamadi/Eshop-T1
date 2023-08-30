@@ -1,8 +1,6 @@
 ﻿@page
 @model ServiceHost.Areas.Administration.Pages.Shop.CustomerDiscount.IndexModel
 
-
-
 @{
     ViewData["title"] = "مدیریت تخفیفات همکاران";
 }
@@ -23,10 +21,10 @@
                 <h3 class="panel-title">جستجو در گروه محصولات</h3>
             </div>
             <div class="panel-body">
-                <form class="form-inline" role="form" method="post">
+                <form class="form-inline" role="form" method="get">
                     <div class="form-group">
-                        <label class="sr-only" asp-for="Discount.Description"></label>
-                        <input class="form-control" asp-for="Discount.Description" placeholder="توضیحات تخفیف">
+                        <label class="sr-only" asp-for="editCustomerDiscountVM.Description"></label>
+                        <input class="form-control" asp-for="editCustomerDiscountVM.DiscountRate" placeholder="توضیحات تخفیف">
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-l-10">جستجو</button>
                     <a class="btn btn-primary waves-effect waves-light m-l-10" asp-page="./Index">مشاهده همه</a>
@@ -58,25 +56,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model.DicountList)
+                                @foreach (var item in Model.editCustomerDiscountVMList)
                                 {
                                     <tr>
                                         <td>@item.Id</td>
-                                        <td>
-                                            <img src="~/ProductPictures/@item.DiscountRate" style="width: 70px; height: 70px" />
-                                        </td>
+                                        <td>@item.DiscountRate</td>
                                         <td>@item.StartDate</td>
                                         <td>@item.EndDate</td>
                                         <td>@item.Description</td>
                                         <td>@item.CreationDate</td>
                                         <td>
                                             <a class="btn btn-warning pull-right m-rl-5"
-                                               href="#showmodal=@Url.Page("./CustomerDiscount", "Edit", new { id = item.Id})">
-                                                <i class="fa fa-edit"></i> ویرایش
+                                               href="#showmodal=@Url.Page("./Index", "Create")">
+                                                <i class="fa fa-edit"></i> ایجاد
                                             </a>
                                             <a class="btn btn-warning pull-right m-rl-5"
-                                               href="#showmodal=@Url.Page("./CustomerDiscount", "Delete", new { id = item.Id})">
-                                                <i class="fa fa-danger"></i> حذف
+                                               href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
+                                                <i class="fa fa-danger"></i> ویرایش
                                             </a>
                                         </td>
                                     </tr>

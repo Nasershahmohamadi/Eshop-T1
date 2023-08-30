@@ -24,7 +24,6 @@ namespace DM.Domain.CustomerAgg
             EndDate = endDate;
             Description = description;
         }
-
         public void Edit(int discountRate, string reason, DateTime startDate, DateTime endDate, string description)
         {
             DiscountRate = discountRate;
@@ -33,25 +32,11 @@ namespace DM.Domain.CustomerAgg
             EndDate = endDate;
             Description = description;
         }
-
         public bool Active()
         {
             try
             {
                 IsActive = true;
-                return true;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-        }
-        public bool DisActive()
-        {
-            try
-            {
-                IsActive = false;
                 return true;
             }
             catch (Exception)
