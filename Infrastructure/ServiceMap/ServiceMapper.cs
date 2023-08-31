@@ -32,11 +32,11 @@ namespace Infrastructure.Context.ServiceMap
             services.AddTransient<ISlideRepository, SlideRepository>();
             services.AddTransient<ISlideApplication, SlideApplication>();
 
-            services.AddTransient<IColleageDiscountApplication, ColleageDiscountApplication>();
-            services.AddTransient<IColleageDiscountRepository, ColleageDiscountRepository>();
+            //services.AddTransient<IColleageDiscountApplication, ColleageDiscountApplication>();
+            //services.AddTransient<IColleageDiscountRepository, ColleageDiscountRepository>();
 
-            services.AddTransient<ICustomerDiscountApplication, CustomerDiscountApplication>();
-            services.AddTransient<ICustomerDiscountRepository, CustomerDiscountRepository>();
+            //services.AddTransient<ICustomerDiscountApplication, CustomerDiscountApplication>();
+            //services.AddTransient<ICustomerDiscountRepository, CustomerDiscountRepository>();
 
 
 

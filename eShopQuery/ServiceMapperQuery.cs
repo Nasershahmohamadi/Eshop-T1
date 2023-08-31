@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.Context.ServiceMap
 {
-    public class ServiceMapper2
+    public class ServiceMapperQuery
     {
         public static void map(IServiceCollection services , string connectionString)
         {

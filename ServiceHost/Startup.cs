@@ -1,3 +1,4 @@
+using DM.Infrastructure.ServiceMap;
 using Infrastructure.Context.ServiceMap;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,7 +26,8 @@ namespace ServiceHost
         public void ConfigureServices(IServiceCollection services)
         {
             ServiceMapper.map(services, Configuration.GetConnectionString("eShop"));
-            ServiceMapper2.map(services, Configuration.GetConnectionString("eShop"));
+            ServiceMapperDiscount.map(services, Configuration.GetConnectionString("eShop"));
+            ServiceMapperQuery.map(services, Configuration.GetConnectionString("eShop"));
             services.AddRazorPages();
         }
 

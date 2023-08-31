@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DM.ApplicationContract\DM.ApplicationContract.csproj" />
+    <ProjectReference Include="..\DM.Infrastructure\DM.Infrastructure.csproj" />
     <ProjectReference Include="..\eShopQuery\eShopQuery.csproj" />
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
